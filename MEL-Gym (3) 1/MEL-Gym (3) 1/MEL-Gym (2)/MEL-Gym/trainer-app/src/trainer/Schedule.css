@@ -1,0 +1,201 @@
+/* Reset & dashboard layout */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #2f3217;
+  color: #ccb04d;
+  min-height: 100vh;
+}
+
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 280px;
+  background-color: #111d0e;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.profile-pic {
+  width: 80px; /* or whatever your circle size is */
+  height: 80px;
+  border-radius: 50%; /* makes it a circle */
+  background-color: #ccb04d; /* yellow fallback color */
+  overflow: hidden; /* clip the image inside the circle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ensures the image fills the circle and keeps aspect ratio */
+  display: block;
+}
+
+.profile-info {
+  margin-top: 8px;
+}
+
+.profile-name {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.profile-role {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 50px 0 0 0;
+}
+
+.menu-btn {
+  padding: 16px 24px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  color: #ccb04d;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.menu-btn:hover,
+.menu-btn.active {
+  background-color: #ccb04d;
+  color: #111d0e;
+  font-weight: 700;
+}
+
+.logout {
+  text-align: center;
+  margin-top: auto;
+  padding: 18px 0;
+  color: #db2227;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Main Content */
+.main-content {
+  flex-grow: 1;
+  padding: 50px 60px;
+  overflow-y: auto;
+  background-color: transparent;
+}
+
+.title {
+  font-size: 34px;
+  font-weight: 700;
+  color: #ccb04d;
+  margin-bottom: 25px;
+}
+
+/* Schedule grid */
+.schedule-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.schedule-title {
+  text-align: center;
+  color: #ccb04d;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.day-column {
+  border: 1px solid #414725;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #232a16;
+}
+
+.day-column:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.day-header {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #c8861b;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.time-slots {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.time-slot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 10px;
+  background-color: #414725;
+  border-radius: 6px;
+  color: #f4f0e6;
+}
+
+.time {
+  font-weight: bold;
+  color: #c8861b;
+}
+
+.event {
+  color: #f4f0e6;
+}
+
+.no-events {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+}
+/* EDIT SCHEDULE button */
+.edit-schedule-container {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.edit-schedule-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #ccb04d; /* mustard accent */
+  color: #111d0e;
+  font-weight: 700;
+  border-radius: 12px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.edit-schedule-btn:hover {
+  background-color: #e0c969; /* slightly brighter on hover */
+}

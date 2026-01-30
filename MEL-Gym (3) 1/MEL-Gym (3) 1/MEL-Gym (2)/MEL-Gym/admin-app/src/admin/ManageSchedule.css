@@ -1,0 +1,347 @@
+/* src/ManageSchedule.css */
+.manage-schedule-container {
+  margin-left: 270px; /* align with sidebar */
+  padding: 32px;
+  min-height: 100vh;
+  background-color: #f7faf9;
+  font-family: 'Lato', sans-serif;
+}
+
+/* Header */
+.manage-schedule-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.manage-schedule-header h1 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #16320f;
+  margin: 0;
+}
+
+.subtitle {
+  color: #6b7280;
+  margin-top: 6px;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+/* Quick actions */
+.quick-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.qa {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: white;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(2,6,23,0.06);
+}
+
+.qa.active {
+  background: linear-gradient(90deg, #f2d49b, #d4a017);
+  color: #111;
+  transform: translateY(-1px);
+}
+
+/* Grid layout: left form, right preview */
+.session-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 20px;
+  align-items: start;
+}
+
+/* Card */
+.session-card {
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfb 100%);
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 10px 25px rgba(10,10,10,0.06);
+  border: 1px solid #edf2f7;
+}
+
+/* Preview card */
+.preview-card {
+  background: linear-gradient(180deg, #fffdf7 0%, #fff8ec 100%);
+  border-radius: 12px;
+  padding: 18px;
+  border: 1px solid #f1e7d0;
+  box-shadow: 0 8px 20px rgba(20,20,20,0.04);
+}
+
+.preview-card h3 {
+  margin: 0 0 10px 0;
+  color: #2e4022;
+  font-size: 18px;
+}
+
+.preview-body p {
+  margin: 8px 0;
+  color: #334155;
+  font-weight: 600;
+}
+
+/* Form styles */
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #2E4022;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  font-size: 14px;
+  transition: box-shadow 0.15s, border 0.15s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #d4a017;
+  box-shadow: 0 6px 18px rgba(212,160,35,0.08);
+}
+
+/* Client list */
+.clients-list {
+  display: grid;
+  gap: 8px;
+}
+
+.client-checkbox {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 8px;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid #f0f0f0;
+  cursor: pointer;
+}
+
+.client-checkbox input[type="checkbox"] {
+  transform: scale(1.05);
+}
+
+.client-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.client-name {
+  font-weight: 800;
+  color: #152b10;
+}
+
+.client-small {
+  font-size: 12px;
+  color: #667085;
+}
+
+/* Two-column row for date/time */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Action row */
+.action-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.assign-btn {
+  background: linear-gradient(90deg, #3d6e3d, #2e502e);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(45, 64, 36, 0.14);
+}
+
+.assign-btn:hover { transform: translateY(-1px); }
+
+.clear-btn {
+  background: transparent;
+  border: 1px solid #d1d5db;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Help text in preview */
+.preview-card .help {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .manage-schedule-container { margin-left: 240px; padding: 20px; }
+  .session-grid { grid-template-columns: 1fr; }
+  .preview-card { order: 2; }
+}
+
+/* ====== CONTAINER ====== */
+.manage-schedule-container {
+  margin-left: 270px;
+  padding: 32px;
+  min-height: 100vh;
+  background-color: #f7faf9;
+  font-family: 'Lato', sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+/* MESSAGE */
+.message-box {
+  grid-column: span 2;
+  padding: 12px 16px;
+  background: #fff3cd;
+  border-left: 5px solid #d4a017;
+  border-radius: 10px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* CARD */
+.card {
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfb 100%);
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 10px 25px rgba(10,10,10,0.06);
+  border: 1px solid #edf2f7;
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 22px;
+  font-weight: 800;
+  color: #16320f;
+  margin-bottom: 16px;
+}
+
+/* FORM GRID */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #2E4022;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #d4a017;
+  box-shadow: 0 6px 18px rgba(212,160,35,0.08);
+}
+
+.form-group.full-width {
+  grid-column: span 2;
+}
+
+/* BUTTONS */
+.btn {
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.add-btn {
+  background: linear-gradient(90deg, #f2d49b, #d4a017);
+  color: #111;
+  margin-bottom: 16px;
+}
+
+.add-btn:hover {
+  transform: translateY(-2px);
+}
+
+.delete-btn {
+  background: #f87171;
+  color: white;
+  margin-left: 10px;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+}
+
+/* LIST CARD */
+.list-card {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-card li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.list-card li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .manage-schedule-container {
+    grid-template-columns: 1fr;
+  }
+  .form-group.full-width {
+    grid-column: span 1;
+  }
+}
